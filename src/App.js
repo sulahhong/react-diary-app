@@ -17,6 +17,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        
+        {/*HEADER COMPONENTS를 공통으로 사용할 수 있게 설정  */}
         <MyHeader 
           headText={"App"}
           leftChild={
@@ -28,6 +30,7 @@ function App() {
         />
         <h2>haha</h2>
 
+        {/* BUTTON COMPONENTS를 공통으로 사용할 수 있게 설정 */}
         <MyButton
           text={"버튼"}
           onClick={() => alert("버튼 클릭됨")}
