@@ -7,7 +7,7 @@ const MyHeader = ({headText, leftChild, rightChild}) => {
             <div className="head_text">
                 {headText}
             </div>
-            <div className="hesd_btn_right">
+            <div className="head_btn_right">
                 {rightChild}
             </div> 
         </header>

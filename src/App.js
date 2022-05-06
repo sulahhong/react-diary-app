@@ -39,8 +39,43 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "오늘의 일기 1번",
+    date:1651829016555,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "오늘의 일기 2번",
+    date:1651829016558,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "오늘의 일기 3번",
+    date:1651829016560,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "오늘의 일기 4번",
+    date:1651829016562,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "오늘의 일기 5번",
+    date:1651829016565,
+  },
+];
+
+console.log(new Date().getTime());
+
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const [data, dispatch] = useReducer(reducer, dummyData);
   
   const dataId = useRef(0);
 
@@ -83,6 +118,7 @@ function App() {
           onCreate,
           onEdit,
           onRemove,
+          
         }}
       >
           <BrowserRouter>
