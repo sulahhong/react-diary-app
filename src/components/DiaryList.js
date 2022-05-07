@@ -31,7 +31,13 @@ const DiaryList = ({ diaryList }) => {
 
     // 선택된 리스트로 정렬하는 함수
     const getProcessedDiaryList = () => {
-        
+        const filterCallBack = (item) => {
+            if (filter === "good") {
+                return parseInt(item.emotion) <= 3;
+            } else {
+                return parseInt(item.emotion) > 3;
+            };
+        };
         //비교 함수
         const compare = (a, b) => {
             if (sortType === "latest") {
@@ -42,12 +48,12 @@ const DiaryList = ({ diaryList }) => {
         };
 
         const copyList = JSON.parse(JSON.stringify(diaryList))
-        // 배열을 copy하여 배열을 JASON화 문자열로 변경 -> 다시 배열로 복호화 
+        // 배열을 copy하여 배열을 JSON화 문자열로 변경 -> 다시 배열로 복호화 
         // 값만 들어오기 때문에 배열을 제대로 받을 수 있음
 
-        const filteredList = filter === "all" ? copyList : copyList.filter()
+        const filteredList = filter === "all" ? copyList : copyList.filter((it)=> filterCallBack(it))
 
-        const sortedList = copyList.sort(compare);
+        const sortedList = filteredList.sort(compare);
         return sortedList;
     };
 
