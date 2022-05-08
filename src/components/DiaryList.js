@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DiaryItem from "./DiaryItem";
 
+import MyButton from "./MyButton";
 
 const sortOptionList = [
     { value: "latest", name: "최신순" },
@@ -7,14 +10,14 @@ const sortOptionList = [
 ];
 
 const filterOptionList = [
-    { value: "all", name: "모두"},
-    { value: "good", name: "좋은 감정만"},
-    { value: "bad", name: "안좋은 감정만"},
+    { value: "all", name: "모두" },
+    { value: "good", name: "좋은 감정만" },
+    { value: "bad", name: "안좋은 감정만" },
 ];
 
 const ControlMenu = ({ value, onChange, optionList }) => {
     return (
-        <select value={value} onChange={(e) => onChange(e.target.value)}>
+        <select className="ControlMenu" value={value} onChange={(e) => onChange(e.target.value)}>
             {optionList.map((it, idx) => (
                 <option key={idx} value={it.value}>
                     {it.name}
@@ -26,6 +29,7 @@ const ControlMenu = ({ value, onChange, optionList }) => {
 
 
 const DiaryList = ({ diaryList }) => {
+    const navigate = useNavigate();
     const [sortType, setSortType] = useState("latest");
     const [filter, setFilter] = useState("all");
 
@@ -51,26 +55,38 @@ const DiaryList = ({ diaryList }) => {
         // 배열을 copy하여 배열을 JSON화 문자열로 변경 -> 다시 배열로 복호화 
         // 값만 들어오기 때문에 배열을 제대로 받을 수 있음
 
-        const filteredList = filter === "all" ? copyList : copyList.filter((it)=> filterCallBack(it))
+        const filteredList = filter === "all" ? copyList : copyList.filter((it) => filterCallBack(it));
 
         const sortedList = filteredList.sort(compare);
         return sortedList;
     };
 
     return (
-        <div>
-            <ControlMenu
-                value={sortType}
-                onChange={setSortType}
-                optionList={sortOptionList}
-            />
-            <ControlMenu
-                value={filter}
-                onChange={setFilter}
-                optionList={filterOptionList}
-            />
+        <div className="DiaryList">
+            <div className="menu_wrapper">
+                <div className="left_col">
+                    <ControlMenu
+                        value={sortType}
+                        onChange={setSortType}
+                        optionList={sortOptionList}
+                    />
+                    <ControlMenu
+                        value={filter}
+                        onChange={setFilter}
+                        optionList={filterOptionList}
+                    />            
+                </div>
+            <div className="right_col">
+                <MyButton
+                    type={"positive"}
+                    text={"새 일기쓰기"}
+                    onClick={() => navigate("/new")}
+                />
+            </div>
+        </div>
+
             {getProcessedDiaryList().map((it) => (
-                <div key={it.id}>{it.content} {it.emotion}</div>
+                <DiaryItem key={it.id} {...it} />
             ))}
         </div>
     );
@@ -79,7 +95,7 @@ const DiaryList = ({ diaryList }) => {
 //default props 
 DiaryList.defaulrprops = {
     diaryList: [],
-}; 
+};
 
 
 export default DiaryList;
