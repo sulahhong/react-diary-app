@@ -77,7 +77,8 @@ console.log(new Date().getTime());
 function App() {
   const [data, dispatch] = useReducer(reducer, dummyData);
   
-  const dataId = useRef(0);
+  // dummy data 만들 때 조심하기, 겹치는 key확인 
+  const dataId = useRef(6);
 
   //CREATE
   const onCreate = (date, content, emotion) => {

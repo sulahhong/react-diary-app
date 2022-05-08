@@ -23,7 +23,11 @@ const Home = () => {
         const lastDay = new Date(
             curDate.getFullYear(),
             curDate.getMonth() + 1,
-            0
+            0,
+            23,
+            59,
+            59
+            // 시간을 비교할 때, 시간분초까지 입력해야 마지막 날 확인 가능
         ).getTime();
         
         setData(diaryList.filter((it)=> firstDay <= it.date && it.date <= lastDay))
