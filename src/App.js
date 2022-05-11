@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import New from './pages/New';
 import Edit from './pages/Edit';
 import Diary from './pages/Diary';
+import Dashboard from './pages/Dashboard';
 
 const reducer = (state, action) => {
   let newState = [];
@@ -57,7 +58,7 @@ function App() {
       dispatch({ type: "INIT", data: diaryList });
     };
   },[]);
-  
+
   const dataId = useRef(0);
 
   //CREATE
@@ -109,6 +110,7 @@ function App() {
                 <Route path='/new' element={<New />} />
                 <Route path='/edit/:id' element={<Edit />} />
                 <Route path='/diary/:id' element={<Diary />} />
+                <Route path='/dashboard' element={<Dashboard />} />
                 {/* <Route path='/diary' element={<Diary />} /> */}
               </Routes>
             </div>

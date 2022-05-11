@@ -9,7 +9,7 @@ import EmotionItem from "./EmotionItem";
 import { getStringDate } from "../util/date";
 import { emotionList } from "../util/emotion"
 
-const DiaryEditor = ({ isEdit,originData }) => {
+const DiaryEditor = ({ isEdit, originData }) => {
   const contentRef = useRef();
   const [content, setContent] = useState("");
   const [emotion, setEmotion] = useState(3);
@@ -25,7 +25,8 @@ const DiaryEditor = ({ isEdit,originData }) => {
 
   const handleSubmit = () => {
     if (content.length < 1) {
-      content.current.focus();
+      // alert("일기 내용을 입력해주세요.")
+      contentRef.current.focus();
       return;
     }
 
