@@ -1,5 +1,6 @@
 import { useState, useRef} from "react";
-
+import { GrCheckbox, GrCheckboxSelected } from "react-icons/gr"
+import {ImBin} from "react-icons/im"
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState([]);
@@ -16,6 +17,12 @@ const ToDoList = () => {
     setToDos([newItem, ...toDos])
   }
 
+  const onDeleteToDo = (targetId) => {
+    const newToDoList = toDos.filter((it) => it.id !== targetId);
+    setToDos(newToDoList)
+  }
+
+
   return (
     <div className="ToDoList">
       <h2>TODOLIST</h2>
@@ -29,7 +36,8 @@ const ToDoList = () => {
       <div>
             <h4>{toDos.length}개의 할일이 있어요</h4>
                 {toDos.map((it) => (
-                    <div key={it.id}>{it.currentContent}</div>
+                    <div key={it.id}><GrCheckbox />{it.currentContent} <ImBin onClick={onDeleteToDo}/></div>
+                    //the checkbox is selected change the icon  <GrCheckboxSelected />
                 ))}
 
       </div>
