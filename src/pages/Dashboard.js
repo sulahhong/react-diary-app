@@ -3,21 +3,6 @@ import MyHeader from "../components/MyHeader";
 import MyButton from "../components/MyButton";
 import ToDoList from "../components/ToDoList";
 
-const dummy = [
-    {
-      id: 1,
-      content: "놀기", 
-    },
-    {
-      id: 2,
-      content: "공부하기", 
-    },
-    {
-      id: 3,
-      content: "집에가기", 
-    },
-  ]
-  
 
 const Dashboard = () => {
     const [curDate2, setCurDate2] = useState(new Date());
@@ -45,7 +30,7 @@ const Dashboard = () => {
                 leftChild={<MyButton text={"<"} onClick={decreaseDay} />}
                 rightChild={<MyButton text={">"} onClick={increaseDay} />}  
             />
-            <ToDoList todoList={dummy}  />
+            <ToDoList />
         </div>
     )
 }
