@@ -4,6 +4,8 @@ import { DiaryStateContext } from "../App";
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
 import DiaryList from "../components/DiaryList";
+import ToDoList from "../components/ToDoList";
+
 
 
 const Home = () => {
@@ -58,6 +60,7 @@ const Home = () => {
                 leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
                 rightChild={<MyButton text={">"} onClick={increaseMonth} />}
             />
+            <ToDoList />
             <DiaryList diaryList={data} />
         </div>
     );

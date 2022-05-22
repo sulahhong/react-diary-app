@@ -13,9 +13,11 @@ const getLocalStorage = () => {
 
 const ToDoList = () => {
   const [toDos, setToDos] = useState(getLocalStorage());
+  // const [active, setActive] = useState('')
   const [currentContent, setCurrentContent]= useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState(null);
+  
 
   const onToggle = useCallback((id) => {
     setToDos(toDos.map((it) => it.id === id ? {...it, checked: !it.checked} : it,),
@@ -23,18 +25,23 @@ const ToDoList = () => {
     [toDos],
     );
 
+    const activelist= toDos.filter(task => !task.checked).length
+    console.log(activelist)
+
   const onCreateToDo = (e) => {
     e.preventDefault();
     if (toDos && isEditing) {
       setToDos(
         toDos.map((it) => {
           if (it.id === editId) {
-            return {...it, title: toDos}
+            return {...it, title: currentContent}
           }
           return it;
         })
       )
-    }
+      setCurrentContent("")
+      setIsEditing(false)
+    }else{
     const newItem = {
       title: currentContent,
       id: new Date().getTime().toString(),
@@ -42,6 +49,7 @@ const ToDoList = () => {
     setToDos([newItem, ...toDos])
     setCurrentContent("")
     setIsEditing(false)
+  }
   }
 
   const onRemoveToDo = (id) => {
@@ -51,8 +59,14 @@ const ToDoList = () => {
 
   const onEditToDo = (id) => {
     const targetToDo = toDos.find((it) => it.id === id);
+    console.log(targetToDo)
+    // setEditForm(true)
     setIsEditing(true);
-    setToDos(targetToDo.title);
+    setEditId(id)
+    setCurrentContent(targetToDo.title)
+    
+
+    // setToDos(targetToDo.title);
   }
 
   const clearList = () => {
@@ -77,7 +91,7 @@ const ToDoList = () => {
       </form>
       <div>
             
-            <List items={toDos} removeItem={onRemoveToDo} editItem={onEditToDo} onToggle={onToggle} />
+          <List items={toDos} removeItem={onRemoveToDo} editItem={onEditToDo} onToggle={onToggle} activelist={activelist} onCreateToDo={onCreateToDo} currentContent={currentContent} setCurrentContent={setCurrentContent}  />
       </div>
       <div>
         <h4></h4>
