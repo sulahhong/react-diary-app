@@ -104,7 +104,7 @@ header button {
 /* DiaryList */
 
 .DiaryList .menu_wrapper {
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 30px;
 
   display: flex;
@@ -385,6 +385,147 @@ header button {
   line-height: 2.5;
 }
 
-.List .btn_family {
+.ToDoList {
+  font-family: "Nanum Gothic";
+  font-size: 18px;
+
+  text-align: center;
+
+}
+
+.ToDoList .todo_form {
   display: flex;
+  justify-content: center;
+
+}
+
+.ToDoList input {
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  font-family: "Nanum Gothic";
+  font-size: 18px;
+
+  border: none;
+  border-radius: 10px;
+  background-color: #FEFCFB;
+}
+
+.ToDoList .input_btn {
+  width: 20%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  margin-left: 5px;
+
+  font-family: "Nanum Gothic";
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #002C78;
+  color: #FEFCFB;
+ 
+}
+
+.ToDoList .input_btn:hover {
+  background-color: #045199;
+
+  color: white;
+}
+
+.ToDoList .btn_family2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.List {
+  font-family: "Nanum Gothic";
+  font-size: 18px;
+
+  padding-top: 15px;
+  padding-bottom: 70px;
+
+}
+
+.List .btn_family{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  text-align: start;
+
+}
+
+.List .btn1 {
+  width: 10%;
+  padding-top: 10px;
+}
+
+
+.List .List_title {
+  width: 70%;
+}
+
+.List .List_title_1 {
+  text-decoration: line-through;
+  width: 70%;
+  color: #1597BC;
+
+}
+
+.List .btn2 {
+  width: 20%;
+  text-align: end;
+  padding-top: 15px;
+}
+
+.List .editbtn:hover {
+  color: #1976d3;
+}
+
+.List .delbtn:hover {
+  color: #fd565f;
+}
+
+.List button {
+  cursor: pointer;
+  border: none;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  background-color: white;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Gothic";
+}
+
+.List h4 {
+  color: #045199;
+}
+
+.Home .homeTodo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+
+  padding-top: 15px;
+  padding-bottom: 5px;
+  
+}
+
+.Home .homeTodo button {
+  width: 100%;
+  background-color: #406e8e;
+  color: white;
 }
