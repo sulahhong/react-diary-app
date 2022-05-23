@@ -23,7 +23,7 @@ const List = ({
 
   return (
     <div className="List">
-      <h4>{activelist}개의 할일이 있어요</h4>
+      <h4>{activelist}개의 할일이 있어요 :)</h4>
       {items.map((item) => {
         const { id, title, checked } = item;
       

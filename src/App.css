@@ -388,8 +388,11 @@ header button {
 .ToDoList {
   font-family: "Nanum Gothic";
   font-size: 18px;
+  color: #002C78;
 
   text-align: center;
+
+  padding-top: 50px;
 
 }
 
@@ -397,6 +400,11 @@ header button {
   display: flex;
   justify-content: center;
 
+}
+
+.ToDoList h2 {
+  color: #002C78;
+  padding-bottom: 15px;
 }
 
 .ToDoList input {
@@ -427,8 +435,9 @@ header button {
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #002C78;
+  background-color: #1597BC;
   color: #FEFCFB;
+  cursor: pointer;
  
 }
 
@@ -441,6 +450,17 @@ header button {
 .ToDoList .btn_family2 {
   display: flex;
   justify-content: space-around;
+
+}
+
+.ToDoList .btn_family2 button {
+  background-color: #121F4A;
+  color: #FEFCFB;
+  border-radius: 10px;
+}
+
+.ToDoList .btn_family2 button:hover {
+  background-color: #045199;
 }
 
 .List {
@@ -469,12 +489,13 @@ header button {
 
 .List .List_title {
   width: 70%;
+  color: black;
 }
 
 .List .List_title_1 {
   text-decoration: line-through;
   width: 70%;
-  color: #1597BC;
+  color: #e2e0e0;
 
 }
 
@@ -513,6 +534,7 @@ header button {
   color: #045199;
 }
 
+
 .Home .homeTodo {
   display: flex;
   justify-content: center;
@@ -526,6 +548,6 @@ header button {
 
 .Home .homeTodo button {
   width: 100%;
-  background-color: #406e8e;
+  background-color: #045199;
   color: white;
 }

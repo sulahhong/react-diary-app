@@ -25,11 +25,12 @@ const Dashboard = () => {
 
     return (
         <div>
-            <MyHeader
+            {/* <MyHeader
                 headText={headText2}  
                 leftChild={<MyButton text={"<"} onClick={decreaseDay} />}
                 rightChild={<MyButton text={">"} onClick={increaseDay} />}  
-            />
+            /> */}
+            
             <ToDoList />
         </div>
     )
