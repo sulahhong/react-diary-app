@@ -5,7 +5,6 @@ import { DiaryStateContext } from "../App";
 import MyHeader from "./../components/MyHeader";
 import MyButton from "./../components/MyButton";
 import DiaryList from "../components/DiaryList";
-import ToDoList from "../components/ToDoList";
 
 const Home = () => {
   const diaryList = useContext(DiaryStateContext);
@@ -14,7 +13,6 @@ const Home = () => {
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
-    const navigate = useNavigate();
 
   useEffect(() => {
     if (diaryList.length >= 1) {
@@ -63,13 +61,6 @@ const Home = () => {
         leftChild={<MyButton text={"<"} onClick={decreaseMonth} />}
         rightChild={<MyButton text={">"} onClick={increaseMonth} />}
       />
-        <div className="homeTodo">
-        <MyButton
-            text={"오늘 해야할 일 확인하기"}
-            onClick={() => navigate("/dashboard")}
-          />
-        </div>
-
       <DiaryList diaryList={data} />
     </div>
   );

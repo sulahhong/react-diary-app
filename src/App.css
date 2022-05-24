@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Yeon+Sung&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poor+Story&family=Yeon+Sung&display=swap');
 
 body {
-  background-color: #f6f6f6;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   min-height: 100vh;
   margin: 0px;
 }
@@ -23,8 +23,8 @@ body {
 }
 
 #root {
-  background-color: white;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  background-color: #e7eaf2;
+  box-shadow: rgba(109, 109, 116, 0.2) 0px 7px 20px 0px;
 }
 
 .App {
@@ -48,21 +48,22 @@ body {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
 }
 
 .MyButton_default {
-  background-color: #ececec;
-  color: black;
+  background-color: #406e8e;
+  color: white;
+
 }
 
 .MyButton_positive {
-  background-color: #64c964;
+  background-color: #23395b;
   color: white;
 }
 
 .MyButton_negative {
-  background-color: #fd565f;
+  background-color:#dd879f;
   color: white;
 }
 
@@ -85,6 +86,7 @@ header .head_text {
   width: 50%;
   font-size: 25px;
   justify-content: center;
+  font-weight: bold;
 }
 
 header .head_btn_left {
@@ -98,14 +100,15 @@ header .head_btn_right {
 }
 
 header button {
-  font-family: "Nanum Gothic";
+  font-family: "'Poor Story'";
+  font-weight: bold;
 }
 
 /* DiaryList */
 
 .DiaryList .menu_wrapper {
-  margin-top: 5px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 
   display: flex;
   justify-content: space-between;
@@ -123,7 +126,8 @@ header button {
   margin-right: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #8ea8c3;
+  color: #f4f8fc;
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -131,9 +135,26 @@ header button {
   padding-right: 20px;
 
   cursor: pointer;
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   font-size: 18px;
 }
+
+.DiaryList .homeTodo {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.DiaryList .homeTodo button {
+  width: 100%;
+}
+
 
 /* DiaryItem */
 
@@ -217,7 +238,7 @@ header button {
 .DiaryEditor .input_date {
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #d3d9eb;
 
   padding-top: 10px;
   padding-bottom: 10px;
@@ -225,8 +246,8 @@ header button {
   padding-right: 20px;
 
   cursor: pointer;
-  font-family: "Nanum Gothic";
-  font-size: 16px;
+  font-family: 'Poor Story';
+  font-size: 20px;
 }
 
 .DiaryEditor .emotion_list_wrapper {
@@ -236,7 +257,7 @@ header button {
 }
 
 .DiaryEditor textarea {
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   font-size: 16px;
 
   box-sizing: border-box;
@@ -246,7 +267,7 @@ header button {
 
   border: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: #d3d9eb;
 
   padding: 20px;
 }
@@ -282,7 +303,7 @@ header button {
 }
 
 .EmotionItem_off {
-  background-color: #ececec;
+  background-color: #e7eaf2;
 }
 
 .EmotionItem_on_1 {
@@ -366,11 +387,12 @@ header button {
 .DiaryPage .emotion_descript {
   font-size: 22px;
   color: white;
+  font-weight: bold;
 }
 
 .DiaryPage .diary_content_wrapper {
   width: 100%;
-  background-color: #ececec;
+  background-color: #d3d9eb;
   border-radius: 5px;
   word-break: keep-all;
   overflow-wrap: break-word;
@@ -380,19 +402,19 @@ header button {
   padding: 20px;
   text-align: left;
   font-size: 20px;
-  font-family: "Nanum Gothic" ;
+  font-family: 'Poor Story';
   font-weight: 400;
   line-height: 2.5;
 }
 
 .ToDoList {
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   font-size: 18px;
   color: #002C78;
 
   text-align: center;
 
-  padding-top: 50px;
+  margin-top: 50px;
 
 }
 
@@ -402,24 +424,26 @@ header button {
 
 }
 
-.ToDoList h2 {
+.ToDoList h1 {
   color: #002C78;
   padding-bottom: 15px;
 }
 
 .ToDoList input {
   width: 80%;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
 
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   font-size: 18px;
 
   border: none;
   border-radius: 10px;
-  background-color: #FEFCFB;
+  background-color: #d3d9eb;
+
+  margin-top: 20px;
 }
 
 .ToDoList .input_btn {
@@ -430,21 +454,22 @@ header button {
   padding-right: 15px;
 
   margin-left: 5px;
+  margin-top: 20px;
 
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
   font-size: 18px;
+
   border: none;
   border-radius: 10px;
-  background-color: #1597BC;
-  color: #FEFCFB;
+  background-color: #406e8e;
+  color: #e7eaf2;
   cursor: pointer;
  
 }
 
 .ToDoList .input_btn:hover {
-  background-color: #045199;
-
-  color: white;
+  background-color: #23395b;
+  color: #e7eaf2;
 }
 
 .ToDoList .btn_family2 {
@@ -454,17 +479,20 @@ header button {
 }
 
 .ToDoList .btn_family2 button {
-  background-color: #121F4A;
-  color: #FEFCFB;
+  background-color: #23395b;
+  color: #e7eaf2;
   border-radius: 10px;
 }
 
 .ToDoList .btn_family2 button:hover {
-  background-color: #045199;
+  background-color: #406e8e;
 }
 
 .List {
-  font-family: "Nanum Gothic";
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  font-family: 'Poor Story';
   font-size: 18px;
 
   padding-top: 15px;
@@ -495,7 +523,7 @@ header button {
 .List .List_title_1 {
   text-decoration: line-through;
   width: 70%;
-  color: #e2e0e0;
+  color: #aaa7a7;
 
 }
 
@@ -510,7 +538,7 @@ header button {
 }
 
 .List .delbtn:hover {
-  color: #fd565f;
+  color: #dd879f;
 }
 
 .List button {
@@ -522,12 +550,12 @@ header button {
   padding-left: 12px;
   padding-right: 12px;
 
-  background-color: white;
+  background-color: #e7eaf2;
 
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Gothic";
+  font-family: 'Poor Story';
 }
 
 .List h4 {
@@ -535,19 +563,8 @@ header button {
 }
 
 
-.Home .homeTodo {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  flex-grow: 1;
-
-  padding-top: 15px;
-  padding-bottom: 5px;
-  
-}
-
 .Home .homeTodo button {
   width: 100%;
-  background-color: #045199;
+  background-color: #161925;
   color: white;
 }

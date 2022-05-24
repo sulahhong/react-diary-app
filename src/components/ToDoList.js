@@ -82,11 +82,11 @@ const ToDoList = () => {
 
   return (
     <div className="ToDoList">
-      <h2>TODOLIST</h2>
+      <h1>TODOLIST</h1>
       <form onSubmit={onCreateToDo} className="todo_form">
         <input
           autoFocus
-          placeholder="오늘의 할일은?"
+          placeholder="오늘의 할 일은?"
           value={currentContent}
           onChange={(e) => setCurrentContent(e.target.value)}
         />

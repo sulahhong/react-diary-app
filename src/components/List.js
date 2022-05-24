@@ -12,38 +12,48 @@ const List = ({
   currentContent,
   setCurrentContent,
 }) => {
-
   const edit = (id) => {
     editItem(id);
   };
 
-//   const onClick = (id) => {
-//     setIsChecked(!Ischecked)
-//   }
+  //   const onClick = (id) => {
+  //     setIsChecked(!Ischecked)
+  //   }
 
   return (
     <div className="List">
-      <h4>{activelist}개의 할일이 있어요 :)</h4>
+      <h4>
+        {activelist < 1
+          ? `오늘의 할 일을 모두 완료했어요 :)`
+          : `${activelist}개의 할 일이 있어요 :) `}
+      </h4>
+      {/* <h4>{activelist}개의 할 일이 있어요 :)</h4> */}
       {items.map((item) => {
         const { id, title, checked } = item;
-      
+
         return (
           <div key={id} className="btn_family">
             <button className="btn1" onClick={() => onToggle(id)}>
               {checked ? <GrCheckboxSelected /> : <GrCheckbox />}
             </button>
-            <div
-                className={checked ? "List_title_1" : "List_title"}   
-            >
+            <div className={checked ? "List_title_1" : "List_title"}>
               <p>{title}</p>
             </div>
             <div className="btn2">
-            <button className="editbtn" type="button" onClick={() => edit(id)}>
-              <GrEdit />
-            </button>
-            <button className="delbtn" type="button" onClick={() => removeItem(id)}>
-              <ImBin />
-            </button>
+              <button
+                className="editbtn"
+                type="button"
+                onClick={() => edit(id)}
+              >
+                <GrEdit />
+              </button>
+              <button
+                className="delbtn"
+                type="button"
+                onClick={() => removeItem(id)}
+              >
+                <ImBin />
+              </button>
             </div>
           </div>
         );
